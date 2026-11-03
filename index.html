@@ -25,7 +25,7 @@
  #dreCards{grid-template-columns:1fr;overflow:visible}.dre-card strong{font-size:28px}
  .choice button{min-height:44px}.scenario{padding:17px 10px}.sec>.row{flex-wrap:wrap}
  #investmentList summary{padding:12px 0;min-height:48px}.purchase-links a{display:inline-flex;align-items:center;min-height:44px;padding:9px 13px;border:1px solid #bfd4c5;border-radius:9px;background:#eef5ed;text-decoration:none;font-weight:650}
- .tablewrap{position:relative}.tablewrap:has(#dreBody)::before{content:'Deslize a tabela para comparar as modalidades →';display:block;font-size:12px;color:#547564;padding:0 0 12px;position:sticky;left:0}
+ .tablewrap{position:relative}.tablewrap:has(#dreBody)::before{content:'Deslize os valores → Os nomes das linhas ficam fixos.';display:block;font-size:12px;color:#547564;padding:0 0 12px;position:sticky;left:0}
  .tablewrap:has(#paybackBody) table,.tablewrap:has(#modesTable) table{display:block;min-width:0;width:100%}
  .tablewrap:has(#paybackBody) thead,.tablewrap:has(#modesTable) thead{display:none}
  #paybackBody,#modesTable{display:grid;gap:14px}
@@ -35,6 +35,19 @@
  #paybackBody td:first-child,#modesTable td:first-child{font-size:16px;font-weight:750;color:var(--green);text-align:left;display:block}
  #paybackBody td:first-child::before,#modesTable td:first-child::before{display:none}
  #paybackBody td:last-child,#modesTable td:last-child{border:0;font-weight:750}
+}
+
+@media(max-width:740px){
+ .tablewrap:has(#dreBody){isolation:isolate;overscroll-behavior-x:contain}
+ .tablewrap:has(#dreBody) .dre-table{min-width:650px;border-collapse:separate;border-spacing:0}
+ .tablewrap:has(#dreBody) .dre-table th:first-child,
+ .tablewrap:has(#dreBody) .dre-table td:first-child{position:sticky;left:0;z-index:2;width:140px;min-width:140px;max-width:140px;padding:12px 8px;font-size:12px;white-space:normal;overflow-wrap:break-word;background:#fff;box-shadow:3px 0 5px #193e3214;border-right:1px solid #dce2d8}
+ .tablewrap:has(#dreBody) .dre-table th:first-child{z-index:3;background:#f3f6f2}
+ .tablewrap:has(#dreBody) .dre-table tr.subtotal td:first-child{background:#f4f7f2}
+ .tablewrap:has(#dreBody) .dre-table tr.total td:first-child{background:#eaf2e9}
+ .tablewrap:has(#dreBody) .dre-table tr:hover:not(.total) td:first-child{background:#f8faf6}
+ .tablewrap:has(#dreBody) .dre-table th:not(:first-child),
+ .tablewrap:has(#dreBody) .dre-table td:not(:first-child){min-width:170px;padding:12px}
 }
 </style></head><body><header><div class="wrap"><div class="over">APE VERONICE · ESTUDO DE VIABILIDADE</div><h1>Quanto o apartamento pode render?</h1><p>Compare o retorno estimado, entenda os custos e veja o investimento para começar.</p><nav class="tabs"><button class="active" data-page="visao">1 · Resumo</button><button data-page="porques">2 · Por que esses preços?</button><button data-page="detalhes">3 · Mercado em detalhe</button><button data-page="dre">4 · DRE projetada</button><button data-page="investimento">5 · Implantação e payback</button></nav></div></header><nav class="mobile-nav" aria-label="Seções do estudo"><button class="active" data-page="visao">Resumo</button><button data-page="porques">Preços</button><button data-page="detalhes">Mercado</button><button data-page="dre">DRE</button><button data-page="investimento">Investimento</button></nav><main class="content">
 <section class="page active" id="visao"><div class="hero"><div class="kicker">Comparativo financeiro · sua proposta</div>
